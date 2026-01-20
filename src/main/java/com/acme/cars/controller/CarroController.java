@@ -41,6 +41,11 @@ public class CarroController {
         List<Carro> allCarros = carroService.getAllPaginado(Integer.parseInt(page), Integer.parseInt(size));
         return ResponseEntity.ok(allCarros);
     }
+    @GetMapping("/all")
+        public ResponseEntity<List<Carro>> getAllCars() {
+            List<Carro> allCarros = carroService.getAll();
+            return ResponseEntity.ok(allCarros);
+    }
     @GetMapping("/{id}")
     public ResponseEntity<Carro> buscarPorId(@PathVariable Long id) {
         try {

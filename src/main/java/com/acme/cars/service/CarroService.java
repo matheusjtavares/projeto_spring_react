@@ -46,6 +46,9 @@ public class CarroService {
     public List<Carro> getAllPaginado(int page, int size){
         return carroRepository.findAll(PageRequest.of(page, size)).stream().toList();
     }
+    public List<Carro> getAll(){
+        return carroRepository.findAll();
+    }
     public List<Carro> search(CriteriaRequest criteriaRequest){
         CriteriaBuilder cb = entityManager.getCriteriaBuilder();
         CriteriaQuery<Carro> cq = cb.createQuery(Carro.class);
